@@ -13,16 +13,16 @@ def minus(op1, op2):
     return op1 - op2
 
 def mult(op1, op2):
-	 """ Function to multiply the operands """
+    """Function to multiply the operands """
     return op1 * op2
 
-def div(op1, op2)
-	 """ Function to divide the operands """
+def div(op1, op2):
+    """ Function to divide the operands """
     return op1/op2
 
 if __name__ == "__main__":
     try:
-        operando1 = int(sys.argv[1]) #Pasamos a int porque si sumamos como string, nos daria 23
+        operando1 = int(sys.argv[1])
         operando2 = int(sys.argv[3])
     except ValueError:
         sys.exit("Error: Non numerical parameters")
@@ -31,11 +31,11 @@ if __name__ == "__main__":
         result = plus(operando1, operando2)
     elif sys.argv[2] == "resta":
         result = minus(operando1, operando2)
-	 elif sys.argv[2] == "multiplica":
+    elif sys.argv[2] == "multiplica":
         result = mult(operando1, operando2)
     elif sys.argv[2] == "divide":
-        if op2 == "0":
-            sys.exit("Division entre cero")
+        if sys.argv[3] == "0":
+            sys.exit("Division by zero")
         else:
             result = div(operando1, operando2)
     else:
