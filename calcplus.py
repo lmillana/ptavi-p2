@@ -3,7 +3,8 @@
 
 import sys
 import calcoohija
-import calcoo 
+import calcoo
+
 
 mifichero = open('fichero.csv')
 
@@ -14,11 +15,11 @@ if __name__ == "__main__":
     calcplus = calcoohija.CalculadoraHija()
     for linea in lineas:
         #lista = linea[:-1].split(',')
-        
+
         operation = linea.split(',')[0]
-        numbers = linea.split(',')[1:] 
-        result = int(numbers[0]) #inicializamos el resultado al primero de la lista.
-        
+        numbers = linea.split(',')[1:]
+        result = int(numbers[0])
+
         if operation == "suma":
             for i in range(1, len(numbers)):
                 result = calcplus.sum(result, int(numbers[i]))
@@ -31,7 +32,7 @@ if __name__ == "__main__":
         elif operation == "divide":
             for i in range(1, len(numbers)):
                 if int(numbers[i]) == "0":
-                    sys.exit("Error.Divide by zero.")
+                    sys.exit("Division by zero is not allowed.")
                 else:
                     result = calcplus.div(result, int(numbers[i]))
         else:
@@ -40,7 +41,3 @@ if __name__ == "__main__":
 
 """ El resultado empieza en el primer elemento de la lista, la posicion cero.
 Por eso hacemos que el rango empiece en la posicion uno, para no repetirlos."""
-
-    
-
-
