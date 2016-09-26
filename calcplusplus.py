@@ -5,18 +5,19 @@ import sys
 import calcoohija
 import csv
 
+
 filename = sys.argv[1]
-with open (filename) as mifichero:
-    
+with open(filename) as mifichero:
+
     datos = csv.reader(mifichero)
-    calcplus = calcoohija.CalculadoraHija ()
-    
+    calcplus = calcoohija.CalculadoraHija()
+
     for linea in datos:
         operation = linea[0]
-        numbers = linea[1:] 
+        numbers = linea[1:]
         result = int(numbers[0])
-        
-        if operation == "suma": 
+
+        if operation == "suma":
             for i in range(1, len(numbers)):
                 result = calcplus.sum(result, int(numbers[i]))
         elif operation == "resta":
@@ -35,6 +36,5 @@ with open (filename) as mifichero:
             sys.exit("Gramatical Error.Try again.")
         print(result)
 
-"""La diferencia con calcplus.py es que al utilizar csv, no necesitamos 
+"""La diferencia con calcplus.py es que al utilizar csv, no necesitamos
 el .split() ya que csv hace por si solo la funcion del split."""
-
