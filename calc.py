@@ -8,13 +8,16 @@ def plus(op1, op2):
     """ Function to sum the operands """
     return op1 + op2
 
+
 def minus(op1, op2):
     """ Function to substract the operands """
     return op1 - op2
 
+
 def mult(op1, op2):
     """Function to multiply the operands """
     return op1 * op2
+
 
 def div(op1, op2):
     """ Function to divide the operands """
@@ -39,6 +42,6 @@ if __name__ == "__main__":
         else:
             result = div(operando1, operando2)
     else:
-        sys.exit('Operación sólo puede ser sumar,restar, multiplicar o dividir.')
+        sys.exit('Operación sólo :sumar,restar,multiplicar o dividir.')
 
     print(result)
